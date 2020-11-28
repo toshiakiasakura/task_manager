@@ -1,0 +1,20 @@
+doctype html 
+html
+    head
+        title 登録
+        link(rel='stylesheet', href='/stylesheets/style.css')
+    body
+        h1 新規課題登録
+        form(action="/write.js", method="POST")
+        table
+            - const array1 = ["課題", "理想の姿", "理想の姿とのギャップ","解決策"]
+            - const array2 = ["kadai", "risou", "gyappu", "kaiketsu" ]
+            - for(var i =0; i< array1.length; i++)
+                tr
+                    th #{array1[i]}
+                        tb
+                            textarea(name=#{array2[i]})
+            tr
+                th 
+                td
+                    buttn(type="submit")投稿
