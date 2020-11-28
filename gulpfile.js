@@ -9,6 +9,15 @@ gulp.task('pugToHtml', function(){
     .pipe(gulp.dest('views'))
 });
 
+function test(){
+    return gulp.src('views/write.pug')
+    .pipe(pug({
+        pretty: true
+    }))
+    .pipe(gulp.dest('views'))
+};
+exports.test = test;
+
 gulp.task('default', 
     gulp.series('pugToHtml'));
 
