@@ -1,7 +1,7 @@
-var express = require('express');
-var sqlite3 = require('sqlite3');
-var router = express.Router();
+import express from 'express'; 
+import sqlite3 from 'sqlite3';
 
+export const router = express.Router();
 var db = new sqlite3.Database('./kadai.db');
 
 /* GET home page. */
@@ -40,4 +40,3 @@ router.post('/write', (req, res, next) => {
     // 登録したら一覧に戻る
     res.redirect('/');
 });
-module.exports = router;
